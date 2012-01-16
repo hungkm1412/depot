@@ -1,5 +1,16 @@
 Depot::Application.routes.draw do
+  resources :line_items
+
+  resources :carts
+
+  get "store/index"
+
   resources :products
+  
+  root :to => 'store#index', :as => 'store'
+  
+  #match '/', :to => 'store#index'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
